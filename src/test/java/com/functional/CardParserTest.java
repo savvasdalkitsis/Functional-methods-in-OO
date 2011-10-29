@@ -9,6 +9,16 @@ public class CardParserTest
 	
 	private static final String EMPTY_DESCRIPTION = "";
 	private static final String ACE_OF_SPADES = "As";
+	private static final String TWO_OF_SPADES = "2s";
+	private static final String THREE_OF_SPADES = "3s";
+	private static final String FOUR_OF_SPADES = "4s";
+	private static final String SIX_OF_SPADES = "6s";
+	private static final String SEVEN_OF_SPADES = "7s";
+	private static final String EIGHT_OF_SPADES = "8s";
+	private static final String NINE_OF_SPADES = "9s";
+	private static final String TEN_OF_SPADES = "0s";
+	private static final String QUEEN_OF_SPADES = "Qs";
+	private static final String KING_OF_SPADES = "Ks";
 	private static final String TWO_OF_HEARTS = "2h";
 	private static final String JACK_WITH_NO_SUIT = "J";
 	private static final String JACK_OF_DIAMONDS = "Jd";
@@ -74,6 +84,24 @@ public class CardParserTest
 	public void willReturnSuitOfSpadesWhenDescriptionHasSpades()
 	{
 		expect(parsedSuitOf(ACE_OF_SPADES)).toBe(Suit.SPADES);
+	}
+	
+	@Test
+	public void willRecognizeAllThePossibleFacesOfCards()
+	{
+		expect(parsedFaceFrom(ACE_OF_SPADES)).toBe(Face.ACE);
+		expect(parsedFaceFrom(TWO_OF_SPADES)).toBe(Face.TWO);
+		expect(parsedFaceFrom(THREE_OF_SPADES)).toBe(Face.THREE);
+		expect(parsedFaceFrom(FOUR_OF_SPADES)).toBe(Face.FOUR);
+		expect(parsedFaceFrom(FIVE_OF_CLUBS)).toBe(Face.FIVE);
+		expect(parsedFaceFrom(SIX_OF_SPADES)).toBe(Face.SIX);
+		expect(parsedFaceFrom(SEVEN_OF_SPADES)).toBe(Face.SEVEN);
+		expect(parsedFaceFrom(EIGHT_OF_SPADES)).toBe(Face.EIGHT);
+		expect(parsedFaceFrom(NINE_OF_SPADES)).toBe(Face.NINE);
+		expect(parsedFaceFrom(TEN_OF_SPADES)).toBe(Face.TEN);
+		expect(parsedFaceFrom(JACK_OF_DIAMONDS)).toBe(Face.JACK);
+		expect(parsedFaceFrom(QUEEN_OF_SPADES)).toBe(Face.QUEEN);
+		expect(parsedFaceFrom(KING_OF_SPADES)).toBe(Face.KING);
 	}
 	
 	private Suit parsedSuitOf(String description)

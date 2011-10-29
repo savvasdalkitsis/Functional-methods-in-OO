@@ -17,5 +17,19 @@ public class Card {
 	public Suit getSuit() {
 		return suit;
 	}
+	
+    @Override
+    public boolean equals(Object obj) {
+    	if (obj == null || !(obj instanceof Card))
+    	{
+    		return false;
+    	}
+    	if (this == obj)
+    	{
+    		return true;
+    	}
+    	Card card = (Card) obj;
+    	return face == card.getFace() && suit == card.getSuit();
+    }
 
 }

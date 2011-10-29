@@ -1,6 +1,6 @@
 package com.functional;
 
-public enum Face {
-	JACK, NO_FACE
-
+public enum Face 
+{
+	ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING
 }

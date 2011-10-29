@@ -19,6 +19,28 @@ public abstract class FunctionalList<T> {
                    ? FunctionalList.<T>nil()
                    : cons(items[start], fromArray(items, start + 1, end));
     }
+    
+    @Override
+    public boolean equals(Object obj) {
+    	if (obj == null || !(obj instanceof FunctionalList))
+    	{
+    		return false;
+    	}
+    	if (this == obj)
+    	{
+    		return true;
+    	}
+    	FunctionalList<?> list = (FunctionalList<?>) obj;
+    	if (isEmpty() != list.isEmpty()) // Not the same size
+    	{
+    		return false;
+    	}
+    	if (isEmpty())
+    	{
+    		return true;
+    	}
+    	return head().equals(list.head()) && tail().equals(list.tail());
+    }
 
     public abstract boolean isEmpty();
 
