@@ -54,6 +54,17 @@ public abstract class FunctionalList<T> {
                    : cons(mapping.apply(head()), tail().map(mapping));
     }
 
+	public FunctionalList<T> reduce(Function<T, Boolean> predicate) {
+		return  isEmpty()
+				? FunctionalList.<T>nil()
+				:
+					predicate.apply(head())
+					? 
+						FunctionalList.cons(head(),	tail().reduce(predicate))
+					: 
+						tail().reduce(predicate);
+	}
+
     public static final class Nil<T> extends FunctionalList<T> {
         @Override
         public boolean isEmpty() {
