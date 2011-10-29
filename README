@@ -8,4 +8,13 @@ We are playing poker.
 
 Given an input like this : "2c 5d 5c Jc Kd" write a program that will output the suit of the Jack. In this case it would be CLUBS. The list of cards is assumed to be ordered by their face.
 
-After this is accomplished, print out if there is a pair in the hand provided. 
+After this is accomplished, print out if there is a pair in the hand provided.
+
+NOTES
+--------------------------
+
+I modified the FunctionalList class to add a reduce method (which was TTDed of course) and I had to make 2 compromises.
+
+First, to fit the card with all the rest in their hand representation, I assume that "10" will be denoted by "0".
+
+Second, I had to write two pieces of "non-functional" code. They are both the equals method implemented for the FunctionalList and the Card class to facilitate testing. (I didn't bother with the hash method cause there was no need for this test).
