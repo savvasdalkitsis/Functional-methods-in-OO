@@ -1,0 +1,11 @@
+This is a task given by the organizers of a talk on functional programming methodologies applied in OO languages like Java.
+
+http://www.meetup.com/london-software-craftsmanship/events/38306082/
+
+The task was to create (test drive) a solution using functional programming methodologies on the following problem.
+
+We are playing poker.
+
+Given an input like this : "2c 5d 5c Jc Kd" write a program that will output the suit of the Jack. In this case it would be CLUBS. The list of cards is assumed to be ordered by their face.
+
+After this is accomplished, print out if there is a pair in the hand provided. 
