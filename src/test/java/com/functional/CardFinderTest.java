@@ -9,7 +9,7 @@ public class CardFinderTest
 	private static final Card JACK_OF_DIAMONS = new Card(Face.JACK, Suit.DIAMONDS);
 	private static final Card FIVE_OF_CLUBS = new Card(Face.FIVE, Suit.CLUBS);
 	private static final String HAND_WITH_ONLY_FIVE_OF_CLUBS = "5c";
-	private static final String HAND_WITH_F_C_AND_J_D = "5c Jd";
+	private static final String HAND_WITH_5_C_AND_J_D = "5c Jd";
 	private static final String EMPTY_HAND = "";
 	private static final String NO_HAND = null;
 	private CardFinder finder;
@@ -41,13 +41,13 @@ public class CardFinderTest
 	@Test
 	public void willFindProperCardWithMatchingFaceInAHandWithTwoCard()
 	{
-		expect(cardFoundIn(HAND_WITH_F_C_AND_J_D).whereFaceIs(Face.JACK)).toEqual(JACK_OF_DIAMONS);
+		expect(cardFoundIn(HAND_WITH_5_C_AND_J_D).whereFaceIs(Face.JACK)).toEqual(JACK_OF_DIAMONS);
 	}
 	
 	@Test
 	public void willFindNoCardWithMatchingFaceIfHandDoesNotContainAnyCardsWithMatchingFace()
 	{
-		expect(cardFoundIn(HAND_WITH_F_C_AND_J_D).whereFaceIs(Face.KING)).toBeNull();
+		expect(cardFoundIn(HAND_WITH_5_C_AND_J_D).whereFaceIs(Face.KING)).toBeNull();
 	}
 	
 	private Holder cardFoundIn(String hand)
